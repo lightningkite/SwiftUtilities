@@ -48,4 +48,31 @@ extension String {
             return nil
         }
     }
+    
+    /**
+    Converts a string to a double and returns the failure num if the conversion failed
+    */
+    func toDouble(fail: Double) -> Double {
+        let formatter = NSNumberFormatter()
+        
+        if let number = formatter.numberFromString(self) as? Double {
+            return number
+        } else {
+            return fail
+        }
+    }
+    
+    
+    /**
+    Converts a string to an int and returns the failure num if the conversion failed
+    */
+    func toInt(fail: Int) -> Int {
+        let formatter = NSNumberFormatter()
+        
+        if let number = formatter.numberFromString(self) as? Int {
+            return number
+        } else {
+            return fail
+        }
+    }
 }
